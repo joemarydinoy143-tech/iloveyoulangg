@@ -1,0 +1,1337 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Story ❤️</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #fff5f8;
+    color: #4a2632;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            rgba(255, 210, 224, .65),
+            rgba(255, 245, 248, .9)
+        ),
+        url("cover.jpg") center/cover;
+
+    position: relative;
+}
+
+.hero-content {
+    animation: fadeUp 1.5s ease;
+}
+
+.small-title {
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #a85b73;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 10vw, 110px);
+    font-weight: normal;
+    color: #8f3654;
+}
+
+.hero p {
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #6e4553;
+}
+
+.heart {
+    font-size: 35px;
+    margin-top: 30px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 30px;
+
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    color: #8f3654;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 100px 8%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    color: #c76b87;
+
+    font-size: 13px;
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+
+    font-size: 45px;
+    font-weight: normal;
+
+    color: #8f3654;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.intro p {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+    line-height: 1.8;
+
+    color: #6a3d4b;
+}
+
+.signature {
+    margin-top: 30px;
+
+    font-family: cursive;
+    font-size: 25px;
+
+    color: #a84f6d;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: #e6a5b8;
+
+    transform: translateX(-50%);
+}
+
+.memory {
+    width: 50%;
+
+    padding: 20px 40px;
+
+    position: relative;
+}
+
+.memory:nth-child(odd) {
+    left: 0;
+
+    text-align: right;
+}
+
+.memory:nth-child(even) {
+    left: 50%;
+}
+
+.memory::after {
+    content: "♥";
+
+    position: absolute;
+
+    top: 25px;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #c85f7d;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+}
+
+.memory:nth-child(odd)::after {
+    right: -17px;
+}
+
+.memory:nth-child(even)::after {
+    left: -17px;
+}
+
+.memory-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(120, 50, 70, .10);
+}
+
+.memory-date {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #b65b76;
+
+    text-transform: uppercase;
+}
+
+.memory h3 {
+    margin: 10px 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    color: #8f3654;
+}
+
+.memory p {
+    line-height: 1.7;
+
+    color: #70505a;
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.photo {
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #f5dce4;
+
+    box-shadow:
+        0 10px 30px rgba(120, 50, 70, .12);
+
+    position: relative;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+.photo-caption {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 25px 15px 15px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.65)
+        );
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   SECOND PHOTO BATCH
+========================= */
+
+.gallery-second {
+    max-width: none;
+
+    background: #fff0f4;
+
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.gallery-second .gallery {
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.gallery-second .photo {
+    height: 300px;
+}
+
+.gallery-second .photo:nth-child(1),
+.gallery-second .photo:nth-child(6) {
+    height: 400px;
+}
+
+
+/* =========================
+   FAVORITE MOMENTS
+========================= */
+
+.moments {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.moment {
+    background: white;
+
+    padding: 35px 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(120, 50, 70, .08);
+
+    transition: .3s;
+}
+
+.moment:hover {
+    transform: translateY(-8px);
+}
+
+.moment .icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.moment h3 {
+    font-family: Georgia, serif;
+
+    color: #8f3654;
+
+    margin-bottom: 10px;
+}
+
+.moment p {
+    color: #76535d;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter-section {
+    background: #fff0f4;
+
+    max-width: none;
+}
+
+.letter {
+    max-width: 750px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 55px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 50px rgba(120, 50, 70, .12);
+
+    position: relative;
+}
+
+.letter::before {
+    content: "♥";
+
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    color: #e59aae;
+
+    font-size: 25px;
+}
+
+.letter h2 {
+    font-family: Georgia, serif;
+
+    font-weight: normal;
+
+    color: #8f3654;
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+}
+
+.letter p {
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #60434d;
+
+    margin-bottom: 20px;
+}
+
+.letter-sign {
+    font-family: cursive;
+
+    font-size: 27px;
+
+    color: #a84f6d;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   FINAL SECTION
+========================= */
+
+.forever {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8f3654,
+            #c66b87
+        );
+
+    color: white;
+
+    max-width: none;
+}
+
+.forever-content h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 8vw, 80px);
+
+    font-weight: normal;
+}
+
+.forever-content p {
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    opacity: .9;
+}
+
+.forever-heart {
+    font-size: 45px;
+
+    margin-top: 30px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #6f2942;
+
+    color: #f8dce5;
+
+    text-align: center;
+
+    padding: 25px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 768px) {
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 35px;
+    }
+
+
+    /* Timeline */
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .memory {
+        width: 100%;
+
+        left: 0 !important;
+
+        text-align: left !important;
+
+        padding-left: 50px;
+        padding-right: 0;
+    }
+
+    .memory::after {
+        left: -2px !important;
+
+        right: auto !important;
+    }
+
+
+    /* Gallery */
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-second .photo,
+    .gallery-second .photo:nth-child(1),
+    .gallery-second .photo:nth-child(6) {
+        height: 350px;
+    }
+
+
+    /* Moments */
+
+    .moments {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Letter */
+
+    .letter {
+        padding: 35px 25px;
+    }
+
+
+    /* Hero */
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            A story written by two hearts
+        </div>
+
+        <h1>
+            Our Story
+        </h1>
+
+        <p>
+            Every memory with you is a page<br>
+            I never want to forget.
+        </p>
+
+        <div class="heart">
+            ♥
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        SCROLL TO BEGIN ↓
+    </div>
+
+</header>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <span>
+            Chapter 01
+        </span>
+
+        <h2>
+            How It All Began
+        </h2>
+
+    </div>
+
+
+    <div class="intro">
+
+        <p>
+            I never knew that one person could slowly become
+            such an important part of my life.
+            From the first conversation to the little moments
+            we shared, our story became something I wanted
+            to keep forever.
+        </p>
+
+        <div class="signature">
+            — Your Dada ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TIMELINE
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <span>
+            Our Journey
+        </span>
+
+        <h2>
+            The Moments We Keep
+        </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <!-- MEMORY 1 -->
+
+        <div class="memory">
+
+            <div class="memory-card">
+
+                <div class="memory-date">
+                    June 2026
+                </div>
+
+                <h3>
+                    The First Encounter
+                </h3>
+
+                <p>
+                    A simple smile, a nice outfit, and a few words 
+                    were all it took to make that moment stay in my mind.
+                     I never knew that something so simple would become
+                      the beginning of our story.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY 2 -->
+
+        <div class="memory">
+
+            <div class="memory-card">
+
+                <div class="memory-date">
+                    July 2026
+                </div>
+
+                <h3>
+                    Getting Closer
+                </h3>
+
+                <p>
+                    The conversations became longer,
+                    the laughs became more  frequent,
+                    and somehow, our night laag became
+                    one of my favorite memories with you.<br>
+
+                    Those simple nights talking, laughing,
+                    and just enjoying each other's company,
+                    were moments I didn't know I'd treasure this much.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY 3 -->
+
+        <div class="memory">
+
+            <div class="memory-card">
+
+                <div class="memory-date">
+                    August - September 2026
+                </div>
+
+                <h3>
+                    A Special Memory
+                </h3>
+
+                <p>
+                    Some memories are unforgettable because they were extraordinary.
+                    But with you, even the ordinary moments became something I wanted to remember.
+                    Every laugh, every smile, every little moment.
+                    I wouldn't trade any of them.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMORY 4 -->
+
+        <div class="memory">
+
+            <div class="memory-card">
+
+                <div class="memory-date">
+                    Today
+                </div>
+
+                <h3>
+                    Still Choosing You
+                </h3>
+
+                <p>
+                    No matter how many chapters we write,
+                    through every argument and misunderstanding,
+                    I'm still grateful you're part of my story.
+                    And through it all, I'd still choose you. ❤️
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PHOTO GALLERY
+     BATCH 1
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <span>
+            Our Memories
+        </span>
+
+        <h2>
+            Captured Moments
+        </h2>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="photo">
+
+            <img
+                src="1.jpeg"
+                alt="Our memory 1"
+            >
+
+            <div class="photo-caption">
+                Our first favorite memory ❤️
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="photo">
+
+            <img
+                src="2.jpeg"
+                alt="Our memory 2"
+            >
+
+            <div class="photo-caption">
+                Just us.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="photo">
+
+            <img
+                src="3.jpeg"
+                alt="Our memory 3"
+            >
+
+            <div class="photo-caption">
+                A day worth remembering.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="photo">
+
+            <img
+                src="4.jpeg"
+                alt="Our memory 4"
+            >
+
+            <div class="photo-caption">
+                My favorite smile.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 5 -->
+
+        <div class="photo">
+
+            <img
+                src="5.jpeg"
+                alt="Our memory 5"
+            >
+
+            <div class="photo-caption">
+                One of many beautiful moments.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 6 -->
+
+        <div class="photo">
+
+            <img
+                src="6.jpeg"
+                alt="Our memory 6"
+            >
+
+            <div class="photo-caption">
+                Forever grateful for this moment.
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PHOTO GALLERY
+     BATCH 2
+========================= -->
+
+<section class="gallery-second">
+
+    <div class="section-title">
+
+        <span>
+            Our Memories • Part II
+        </span>
+
+        <h2>
+            More Moments, More Us
+        </h2>
+
+    </div>
+
+
+    <div class="gallery">
+
+
+        <!-- PHOTO 7 -->
+
+        <div class="photo">
+
+            <img
+                src="7.jpeg"
+                alt="Our memory 7"
+            >
+
+            <div class="photo-caption">
+                Another beautiful day with you. ❤️
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 8 -->
+
+        <div class="photo">
+
+            <img
+                src="8.jpg"
+                alt="Our memory 8"
+            >
+
+            <div class="photo-caption">
+                A little moment, a big memory.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 9 -->
+
+        <div class="photo">
+
+            <img
+                src="9.jpg"
+                alt="Our memory 9"
+            >
+
+            <div class="photo-caption">
+                Happiness looks better with you.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 10 -->
+
+        <div class="photo">
+
+            <img
+                src="10.jpg"
+                alt="Our memory 10"
+            >
+
+            <div class="photo-caption">
+                One more memory to keep.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 11 -->
+
+        <div class="photo">
+
+            <img
+                src="15.jpg"
+                alt="Our memory 11"
+            >
+
+            <div class="photo-caption">
+                Somewhere between the moments,
+                we became us.
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 12 -->
+
+        <div class="photo">
+
+            <img
+                src="12.jpg"
+                alt="Our memory 12"
+            >
+
+            <div class="photo-caption">
+                And I'd choose this moment again. ❤️
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FAVORITE MOMENTS
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <span>
+            The Little Things
+        </span>
+
+        <h2>
+            Things I Love About Us
+        </h2>
+
+    </div>
+
+
+    <div class="moments">
+
+
+        <div class="moment">
+
+            <div class="icon">
+                ☕
+            </div>
+
+            <h3>
+                Our Conversations
+            </h3>
+
+            <p>
+                Even the simplest conversations
+                somehow become my favorite memories.
+            </p>
+
+        </div>
+
+
+        <div class="moment">
+
+            <div class="icon">
+                🌅
+            </div>
+
+            <h3>
+                Our Quiet Moments
+            </h3>
+
+            <p>
+                Sometimes we don't need anything special.
+                Being together is already enough.
+            </p>
+
+        </div>
+
+
+        <div class="moment">
+
+            <div class="icon">
+                🌷
+            </div>
+
+            <h3>
+                The Little Things
+            </h3>
+
+            <p>
+                The small messages, smiles, jokes,
+                and moments that slowly became everything.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LOVE LETTER
+========================= -->
+
+<section class="letter-section">
+
+    <div class="section-title">
+
+        <span>
+            A Letter For You
+        </span>
+
+        <h2>
+            If I Could Tell You One Thing
+        </h2>
+
+    </div>
+
+
+    <div class="letter">
+
+        <h2>
+            To You,
+        </h2>
+
+
+        <p>
+            Thank you for becoming one of the most beautiful
+            parts of my life.
+        </p>
+
+
+        <p>
+            I may not always have the perfect words,
+            but I hope my actions will always remind you
+            how much I appreciate you.
+        </p>
+
+
+        <p>
+            Every memory we have made is something I treasure.
+            And if life gives us the chance to create more,
+            I would be grateful for every single one.
+        </p>
+
+
+        <p>
+            Whatever happens next, I hope you always remember
+            that meeting you was something I'll always be
+            thankful for.
+        </p>
+
+
+        <div class="letter-sign">
+            Always you. ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="forever">
+
+    <div class="forever-content">
+
+        <h2>
+            And this is only<br>
+            the beginning.<br>
+            Happy 3rd Monthsary, langg!<br>
+            I love you<br>
+        </h2>
+
+        <p>
+            More memories. More stories. More us.
+        </p>
+
+        <div class="forever-heart">
+            ♥
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Made with love ❤️
+
+    <br>
+
+    <small>
+        Our Story • Our Memories • Our Journey
+    </small>
+
+</footer>
+
+
+</body>
+
+</html>
+```
